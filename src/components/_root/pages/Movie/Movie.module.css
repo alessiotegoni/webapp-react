@@ -1,0 +1,27 @@
+.moviePage {
+  padding: 2rem;
+}
+
+.movieInfo {
+  margin-top: 2rem;
+  background-color: #f0f0f0;
+  padding: 1rem;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+}
+
+.reviews {
+  background-color: #f0f0f0;
+  padding: 1rem;
+  border-radius: 8px;
+}
+
+.review {
+  margin: 1rem 0;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #ccc;
+}
+
+.review:last-child {
+  border-bottom: none;
+}
