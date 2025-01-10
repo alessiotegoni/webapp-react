@@ -3,11 +3,24 @@
 }
 
 .movieInfo {
+  display: flex;
+  gap: 1rem;
   margin-top: 2rem;
   background-color: #f0f0f0;
   padding: 1rem;
   border-radius: 8px;
   margin-bottom: 2rem;
+}
+
+.movieInfo img {
+  max-width: 100%;
+  border-radius: .4rem;
+  aspect-ratio: 4 / 6;
+}
+
+.movieInfo h1 {
+  margin-bottom: 1rem;
+  font-size: 3rem;
 }
 
 .reviews {

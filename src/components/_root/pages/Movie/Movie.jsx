@@ -21,20 +21,23 @@ export default function Movie() {
 
   return (
     <div className={styles.moviePage}>
-      <h1>{movie.title}</h1>
       <div className={styles.movieInfo}>
-        <p>
-          <strong>Director:</strong> {movie.director}
-        </p>
-        <p>
-          <strong>Genre:</strong> {movie.genre}
-        </p>
-        <p>
-          <strong>Release Year:</strong> {movie.release_year}
-        </p>
-        <p>
-          <strong>Abstract:</strong> {movie.abstract}
-        </p>
+        <img src={movie.image} alt={movie.title} />
+        <div>
+        <h1>{movie.title}</h1>
+          <p>
+            <strong>Director:</strong> {movie.director}
+          </p>
+          <p>
+            <strong>Genre:</strong> {movie.genre}
+          </p>
+          <p>
+            <strong>Release Year:</strong> {movie.release_year}
+          </p>
+          <p>
+            <strong>Abstract:</strong> {movie.abstract}
+          </p>
+        </div>
       </div>
       <div className={styles.reviews}>
         <h2>Reviews</h2>

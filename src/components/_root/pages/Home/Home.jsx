@@ -8,13 +8,13 @@ export default function Home() {
   const [search, setSearch] = useState(null);
 
   const handleFetchMovies = async (params) => {
-    const results = await getMovies(params)
+    const results = await getMovies(params);
 
-    setMovies(results)
-  }
+    setMovies(results);
+  };
 
   useEffect(() => {
-    handleFetchMovies({ search })
+    handleFetchMovies({ search });
   }, [search]);
 
   return (
@@ -25,7 +25,7 @@ export default function Home() {
           type="text"
           placeholder="Search movies"
           value={search}
-          onChange={(e) => setSearch(e.target.value)}
+          onChange={(e) => setTimeout(() => setSearch(e.target.value), 5_000)}
           className={styles.searchInput}
         />
       </div>
@@ -36,7 +36,12 @@ export default function Home() {
             key={movie.id}
             className={styles.movieCard}
           >
-            <h2>{movie.title}</h2>
+            <figure>
+              <img src={movie.image} alt={movie.title} />
+              <figcaption>
+                <h2>{movie.title}</h2>
+              </figcaption>
+            </figure>
             <p>{movie.director}</p>
             <p>{movie.genre}</p>
             <p>{movie.release_year}</p>
