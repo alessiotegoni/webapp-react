@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import styles from "./Movie.module.css";
 import { getMovieById } from "../../../../util/api/queries";
+import MovieReviewForm from "../../../forms/movieReview/MovieReviewForm";
 
 export default function Movie() {
   const [movie, setMovie] = useState(null);
@@ -24,7 +25,7 @@ export default function Movie() {
       <div className={styles.movieInfo}>
         <img src={movie.image} alt={movie.title} />
         <div>
-        <h1>{movie.title}</h1>
+          <h1>{movie.title}</h1>
           <p>
             <strong>Director:</strong> {movie.director}
           </p>
@@ -48,6 +49,12 @@ export default function Movie() {
             <p>{review.text}</p>
           </div>
         ))}
+        <MovieReviewForm
+          movieId={movie.id}
+          onReviewSent={(review) =>
+            setMovie({ ...movie, reviews: [...movie.reviews, review] })
+          }
+        />
       </div>
     </div>
   );
